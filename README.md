@@ -39,7 +39,7 @@ sudo docker run hello-world
 
 #### Giving Perminssion to Docker by adding docker to present User Group and new group docker
 ```bash
-sudo usermod -aG docker $user && newgrp docker
+sudo usermod -aG docker $USER && newgrp docker
 ```
 
 Now You can start minikube
@@ -47,4 +47,21 @@ Now You can start minikube
 #### Starting minikube
 ```bash
 minikube start --driver=docker
+```
+
+#### Installing kubectl --classic 
+- Kubectl is a command-line tool used to manage and interact with Kubernetes clusters for deploying and monitoring applications
+```bash
+sudo snap install kubectl --classic
+```
+
+#### List all the Pods across all namespaces
+```bash
+$ kubectl get po -A
+
+$ minikube status
+# checks the status of the Minikube cluster, displaying information about the cluster's components such as the VM, Kubernetes, and any running services.
+
+$ kubectl get node
+#retrieves information about the nodes in the Kubernetes cluster, listing their status, roles, and other relevant details.
 ```
